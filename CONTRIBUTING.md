@@ -1,38 +1,26 @@
-# Contributing to AAP (MVP)
+# Contributing to AAP
 
-We welcome contributions that keep authority explicit and controls tight.
+Thanks for helping improve the Agent Authority Protocol.
 
-## Ground rules
-- Do not weaken the authority model (human-in-the-loop, no agent-decided commits).
-- Keep policies human-owned; agents must not write `aap/policies/`.
-- Preserve state machine invariants (`DRAFT → PROPOSED → EVALUATED → ACCEPTED → COMMITTED; REJECTED`).
+AAP is a protocol specification. Clarity and stability matter more than speed.
 
-## Setup
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements-dev.txt
-```
+## Before You Contribute
 
-## Tests
-```bash
-pytest
-```
-Add tests for any new logic (state transitions, policy/evidence checks, auth).
+1. Read `README.md`
+2. Read `terminology.md`
+3. Read `non-goals.md`
 
-## Style
-- Python 3.9+, standard library first, avoid unnecessary dependencies.
-- Prefer clear functions over cleverness; add brief comments only where intent isn’t obvious.
-- Keep CLI/API behavior backwards compatible; document flags/fields if you change them.
+## RFC Changes
 
-## Security and auth
-- TOTP secrets and API tokens must never be committed.
-- Policies and allowlists are human-owned; changes require review.
-- Evidence trust rules must not be relaxed without justification.
+- Protocol changes MUST be proposed as RFC updates.
+- Every RFC PR MUST explain motivation, scope, and backward impact.
 
-## Git hygiene
-- Use scoped PRs; include rationale and tests.
-- If you edit git guard logic (pre-receive hook or commit checks), call that out explicitly.
+## Pull Request Guidelines
 
-## Reporting issues
-- Security-sensitive? See `SECURITY.md`.
-- Bugs/requests: file an issue with repro steps and expected behavior.
+- Keep changes focused and minimal.
+- Prefer explicit, testable language.
+- Avoid implementation-specific behavior.
+
+## Contact
+
+If you are unsure about scope or direction, open an issue first.

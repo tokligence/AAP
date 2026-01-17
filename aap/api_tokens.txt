@@ -1,2 +1,0 @@
-# API tokens (one per line) for FastAPI endpoints
-devtoken
